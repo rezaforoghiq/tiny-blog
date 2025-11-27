@@ -14,7 +14,15 @@ class Routing
 
         $this->currentRoute = explode("/", $currentRoute);
 
+        if($this->currentRoute[0] == ""){
+
+            $this->currentRoute[0] = "home";
+
+        }
+
     }
+
+    
 
 
     public function run(){
@@ -27,6 +35,7 @@ class Routing
             exit();
 
         }
+
 
         if(sizeof($this->currentRoute) == 2 && $this->currentRoute[1] == ""){
 

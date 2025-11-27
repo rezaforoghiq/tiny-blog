@@ -7,7 +7,7 @@
                 </section>
                 <section class="col-md-10 pt-3">
 
-                    <form action="create.php" method="post">
+                    <form action="<?= $this->url("category/store") ?>" method="post">
                         <section class="form-group">
                             <label for="name">Name</label>
                             <input type="text" class="form-control" name="name" id="name" placeholder="name ...">

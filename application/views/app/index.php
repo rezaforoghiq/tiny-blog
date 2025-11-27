@@ -1,15 +1,15 @@
-<?php $this->include("app.layouts.header") ?>
+<?php $this->include("app.layouts.header", compact("categories")) ?>
 
     <section class="container my-5">
         <!-- Example row of columns -->
         <section class="row">
-           
+           <?php foreach($articles as $article){ ?>
                 <section class="col-md-4">
-                    <section class="mb-2 overflow-hidden" style="max-height: 15rem;"><img class="img-fluid" src="" alt=""></section>
-                    <h2 class="h5 text-truncate">title</h2>
-                    <p>body</p>
-                    <p><a class="btn btn-primary" href="" role="button">View details »</a></p>
+                    <h2 class="h5 text-truncate"><?= $article["title"] ?></h2>
+                    <p><?= substr($article["body"], 0, 60). " ..." ?></p>
+                    <p><a class="btn btn-primary" href="<?= $this->url("home/detail/". $article["id"]) ?>" role="button">View details »</a></p>
                 </section>
+            <?php } ?>
                
         </section>
     </section>

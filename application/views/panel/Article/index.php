@@ -10,7 +10,7 @@
 
                 <section class="mb-2 d-flex justify-content-between align-items-center">
                     <h2 class="h4">Articles</h2>
-                    <a href="create.php" class="btn btn-sm btn-success">Create</a>
+                    <a href="<?= $this->url("article/create") ?>" class="btn btn-sm btn-success">Create</a>
                 </section>
 
                 <section class="table-responsive">
@@ -18,29 +18,26 @@
                         <thead>
                         <tr>
                             <th>#</th>
-                            <th>image</th>
                             <th>title</th>
-                            <th>cat_id</th>
+                            <th>category</th>
                             <th>body</th>
-                            <th>status</th>
                             <th>setting</th>
                         </tr>
                         </thead>
+                        <?php foreach($articles as $article){ ?>
                         <tbody>
                             <tr>
-                                <td>2</td>
-                                <td><img style="width: 90px;" src=""></td>
-                                <td>title</td>
-                                <td>cat name</td>
-                                <td>body</td>
-                                <td><span class="text-success">enable</span> <span class="text-danger">disable</span></td>
+                                <td><?= $article["id"] ?></td>
+                                <td><?= $article["title"] ?></td>
+                                <td><?= $article["cat_name"] ?></td>
+                                <td><?= substr($article["body"], 0, 35). " ..." ?></td>
                                 <td>
-                                    <a href="" class="btn btn-warning btn-sm">Change status</a>
-                                    <a href="" class="btn btn-info btn-sm">Edit</a>
-                                    <a href="" class="btn btn-danger btn-sm">Delete</a>
+                                    <a href="<?= $this->url("article/edit/". $article["id"]) ?>" class="btn btn-info btn-sm">Edit</a>
+                                    <a href="<?= $this->url("article/delete/". $article["id"]) ?>" class="btn btn-danger btn-sm">Delete</a>
                                 </td>
                             </tr>
                         </tbody>
+                        <?php } ?>
                     </table>
                 </section>
 

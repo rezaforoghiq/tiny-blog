@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>403 - Access Forbidden</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #343a40;
+            font-family: 'Poppins', sans-serif;
+        }
+        .error-container {
+            max-width: 700px;
+            padding: 50px;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .error-code {
+            font-size: 12rem;
+            font-weight: 900;
+            color: #ffc107; /* Bootstrap Warning Yellow */
+            line-height: 1;
+            margin-bottom: 0;
+            text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.05);
+            animation: pulse 2s infinite ease-in-out alternate;
+        }
+        .error-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-top: -10px;
+            margin-bottom: 20px;
+            color: #343a40;
+        }
+        .btn-warning {
+            transition: transform 0.3s ease;
+        }
+        .btn-warning:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(255, 193, 7, 0.5);
+        }
+
+        @keyframes pulse {
+            from { transform: scale(1); }
+            to { transform: scale(1.05); }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <h1 class="error-code">403</h1>
+        <h2 class="error-title">ACCESS DENIED</h2>
+        <p class="lead mb-4">You do not have permission to view this resource.</p>
+        <p class="mb-5">This area of the website is restricted. Please check your credentials or return to the main page.</p>
+        <a href="https://rezaforoghi/" class="btn btn-warning btn-lg text-dark">Return to Homepage</a>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Optional: Adding an animation to the button on hover
+            $('.btn-warning').hover(function() {
+                $(this).toggleClass('shadow-lg');
+            });
+        });
+    </script>
+</body>
+</html>

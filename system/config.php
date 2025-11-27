@@ -1,9 +1,9 @@
 <?php
 
 // Routing system configuration
-$baseUrl = "http://localhost/mvc/";
+$baseUrl = "https://rezaforoghi.ir/";
 
-$baseDir = "/mvc/";
+$baseDir = "/";
 
 $tmp = explode("?", $_SERVER['REQUEST_URI']);
 
@@ -16,7 +16,7 @@ unset($tmp);
 // database properies
 
 $dbHost = "localhost";
-$dbName = "mvc";
-$dbUsername = "root";
-$dbPassword = "";
+$dbName = "rezafor1_blog";
+$dbUsername = "rezafor1_aghareza";
+$dbPassword = "@Reza1387/";
 

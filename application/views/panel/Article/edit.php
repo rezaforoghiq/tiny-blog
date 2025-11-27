@@ -8,23 +8,22 @@
                 </section>
                 <section class="col-md-10 pt-3">
 
-                    <form action="" method="post" enctype="multipart/form-data">
+                    <form action="<?= $this->url("article/update/". $article["id"]) ?>" method="post" enctype="multipart/form-data">
                         <section class="form-group">
                             <label for="title">Title</label>
-                            <input type="text" class="form-control" name="title" id="title" placeholder="title ..." value="w">
-                        </section>
-                        <section class="form-group">
-                            <label for="image">Image</label>
-                            <input type="file" class="form-control" name="image" id="image">
+                            <input type="text" class="form-control" name="title" id="title" value="<?= $article["title"] ?>">
                         </section>
                         <section class="form-group">
                             <label for="cat_id">Category</label>
                             <select class="form-control" name="cat_id" id="cat_id">
+                                <?php foreach($categories as $category){ ?>
+                                <option value="<?= $category["id"] ?>" <?= $category["id"] == $article["cat_id"] ? "selected" : "" ?>><?= $category["name"] ?></option>
+                                <?php } ?>
                         </select>
                         </section>
                         <section class="form-group">
                             <label for="body">Body</label>
-                            <textarea class="form-control" name="body" id="body" rows="5" placeholder="body ...">sss</textarea>
+                            <textarea class="form-control" name="body" id="body" rows="5"><?= $article["body"] ?></textarea>
                         </section>
                         <section class="form-group">
                             <button type="submit" class="btn btn-primary">Update</button>

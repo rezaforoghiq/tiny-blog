@@ -1,5 +1,28 @@
-RewriteEngine On
-RewriteBase /
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.+)$ mvc/index.php [QSA,L]
+# ----------------------------------------------------
+# 1. تنظیم صفحات خطای سفارشی (باید خارج از IfModule باشد)
+# ----------------------------------------------------
+# آدرس دهی باید نسبت به Root وب‌سایت باشد
+ErrorDocument 403 /public/403.html
+ErrorDocument 404 /public/404.html
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    
+    # ----------------------------------------------------------------------
+    # 2. مستثنی کردن فایل‌های خطای HTML
+    # اگر درخواست مستقیماً به 403.html یا 404.html اشاره داشت، بازنویسی را متوقف کن.
+    # این تضمین می‌کند که ErrorDocument بتواند فایل را بارگذاری کند.
+    RewriteCond %{REQUEST_URI} ^/public/(403|404)\.html$ [NC]
+    RewriteRule ^ - [L]
+
+    # ----------------------------------------------------------------------
+    # 3. قوانین موجود (سرویس‌دهی فایل‌های واقعی)
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # 4. هدایت تمام درخواست‌های باقی‌مانده به mvc/index.php
+    RewriteRule ^(.*)$ mvc/index.php [QSA,L]
+    
+</IfModule>
