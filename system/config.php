@@ -1,9 +1,9 @@
 <?php
 
 // Routing system configuration
-$baseUrl = "https://rezaforoghi.ir/";
+$baseUrl = "http://localhost/tiny-blog/";
 
-$baseDir = "/";
+$baseDir = "/tiny-blog/";
 
 $tmp = explode("?", $_SERVER['REQUEST_URI']);
 
@@ -16,7 +16,7 @@ unset($tmp);
 // database properies
 
 $dbHost = "localhost";
-$dbName = "rezafor1_blog";
-$dbUsername = "rezafor1_aghareza";
-$dbPassword = "@Reza1387/";
+$dbName = "mvc";
+$dbUsername = "root";
+$dbPassword = "";
 

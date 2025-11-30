@@ -17,6 +17,8 @@ class Home extends Controller{
 
         $articles = $articleM->all();
 
+        // echo json_encode($articles);
+
         $this->view("app.index", compact("articles", "categories"));
 
     }

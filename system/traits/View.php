@@ -11,7 +11,7 @@ trait View{
         if($var)
             extract($var);
 
-        $path = realpath(dirname(__FILE__) . "/../../application/views/" . $dir . ".php");
+        $path = realpath(dirname(__FILE__) . "/../../Application/Views/" . $dir . ".php");
 
         if(file_exists($path)){
 
@@ -49,7 +49,7 @@ trait View{
 
         }
 
-        $path = realpath(dirname(__FILE__) . "/../../application/views/" . $dir . ".php");
+        $path = realpath(dirname(__FILE__) . "/../../Application/Views/" . $dir . ".php");
 
         if(file_exists($path)){
 

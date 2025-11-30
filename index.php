@@ -1,5 +1,5 @@
 <?php
 
     // Boot
-    require_once("system/bootstrap/boot.php");
+    require_once("System/Bootstrap/boot.php");
     

@@ -3,9 +3,9 @@
     session_start();
     
 
-    require_once("system/config.php");
+    require_once("System/config.php");
 
-    require_once("system/bootstrap/Autoload.php");
+    require_once("System/Bootstrap/Autoload.php");
 
 
     $autoload = new \System\Bootstrap\Autoload();

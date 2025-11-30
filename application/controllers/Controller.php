@@ -8,9 +8,13 @@
 
     class Controller{
 
-        use Redirect,View,Helper;
+        
+            use View,Redirect,Helper;
+
+
+        }
 
         
 
 
-    }
+    

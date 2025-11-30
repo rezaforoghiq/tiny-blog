@@ -23,6 +23,6 @@ ErrorDocument 404 /public/404.html
     RewriteRule ^ - [L]
 
     # 4. هدایت تمام درخواست‌های باقی‌مانده به mvc/index.php
-    RewriteRule ^(.*)$ mvc/index.php [QSA,L]
+    RewriteRule ^(.*)$ tiny-blog/index.php [QSA,L]
     
 </IfModule>
